@@ -33,7 +33,7 @@ echo  ##########  ##########
 echo  ##########  ##########
 echo.
 echo Main menu:
-echo 1. Bypass
+echo 1. Disable the Windows 11 Installation Requirements Bypass
 echo 2. Exit
 echo.
 
@@ -46,22 +46,22 @@ echo Invalid choice. Please try again.
 goto main_menu
 
 :bypass
-echo This section allows you to bypass various checks.
-echo 1. Bypass CPU Check
-echo 2. Bypass Storage Check
-echo 3. Bypass RAM Check
-echo 4. Bypass TPM Check
-echo 5. Bypass SecureBoot Check
-echo 6. Allow Upgrade With Unsupported TPM or CPU
+echo This section WON'T allow you to bypass various checks.
+echo 1. DO NOT Bypass CPU Check
+echo 2. DO NOT Bypass Storage Check
+echo 3. DO NOT Bypass RAM Check
+echo 4. DO NOT Bypass TPM Check
+echo 5. DO NOT Bypass SecureBoot Check
+echo 6. DO NOT Allow Upgrade With Unsupported TPM or CPU
 echo.
 
-echo Adding keys to bypass various checks...
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassCPUCheck /f /t REG_DWORD /d 00000001
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassStorageCheck /f /t REG_DWORD /d 00000001
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassRAMCheck /f /t REG_DWORD /d 00000001
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassTPMCheck /f /t REG_DWORD /d 00000001
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /f /t REG_DWORD /d 00000001
-REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup /v AllowUpgradesWithUnsupportedTPMOrCPU /f /t REG_DWORD /d 00000001
+echo Adding keys to DISABLE the bypass checks...
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassCPUCheck /f /t REG_DWORD /d 00000000
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassStorageCheck /f /t REG_DWORD /d 00000000
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassRAMCheck /f /t REG_DWORD /d 00000000
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassTPMCheck /f /t REG_DWORD /d 00000000
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig /v BypassSecureBootCheck /f /t REG_DWORD /d 00000000
+REG ADD HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup /v AllowUpgradesWithUnsupportedTPMOrCPU /f /t REG_DWORD /d 00000000
 
 echo Keys added successfully.
 pause
